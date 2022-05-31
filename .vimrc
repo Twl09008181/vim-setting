@@ -1,12 +1,11 @@
 syntax enable
 set nocompatible
 "colorscheme slate
-let g:codedark_term256=1
 colorscheme codedark
 
 
 set rnu
-set clipboard=unname
+set clipboard=unnamed
 set cursorline
 set showcmd
 
