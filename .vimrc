@@ -70,3 +70,7 @@ if executable('clangd')
           autocmd FileType objcpp setlocal omnifunc=lsp#complete
           augroup end
 endif
+
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
