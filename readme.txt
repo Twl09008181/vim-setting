@@ -1,5 +1,8 @@
 # my .vimrc setting 
 
+## plug manager 
+https://github.com/junegunn/vim-plug
+
 ## statusline 
 https://github.com/vim-airline/vim-airline
 
