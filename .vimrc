@@ -36,9 +36,7 @@ filetype indent on
 filetype plugin on
 
 " keymap
-imap jj <ESC>
-inoremap " ""<left>
-inoremap ' ''<left>
+map jj <ESC>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap {{ {}<left>
@@ -52,5 +50,23 @@ call plug#begin()
 Plug 'preservim/NERDTree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
 call plug#end()
 
+if executable('clangd')
+      augroup lsp_clangd
+          autocmd!
+          autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'clangd',
+                \ 'cmd': {server_info->['clangd']},
+                \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+                \ })
+          autocmd FileType c setlocal omnifunc=lsp#complete
+          autocmd FileType cpp setlocal omnifunc=lsp#complete
+          autocmd FileType objc setlocal omnifunc=lsp#complete
+          autocmd FileType objcpp setlocal omnifunc=lsp#complete
+          augroup end
+endif
