@@ -62,7 +62,8 @@ if executable('clangd')
           autocmd User lsp_setup call lsp#register_server({
                 \ 'name': 'clangd',
                 \ 'cmd': {server_info->['clangd']},
-                \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+                \ 'allowlist': ['.c','.cc', '.cpp', '.objc', '.objcpp'],
+                \ 'root_uri':['~./workspace/compile_command.json']
                 \ })
           autocmd FileType c setlocal omnifunc=lsp#complete
           autocmd FileType cpp setlocal omnifunc=lsp#complete
@@ -74,3 +75,25 @@ endif
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+
+"LSP keymap
+
+" return from CTRL-O (Older cusor position)
+nnoremap gdf :LspDefinition<cr>
+nnoremap gdc :LspDeclaration<cr>
+nnoremap pdf :LspPeekDefinition<cr>
+nnoremap pdc :LspPeekDeclaration<cr>
+nnoremap lrf :LspReferences<cr>
+" <leader> is key '\'
+" documentation format
+nnoremap <leader>df :LspDocumentFormat<cr>
+"document diagnostics"
+nnoremap <leader>dd :LspDocumentDiagnostic<cr>
+nnoremap nd :LspNextDiagnostic<cr>
+nnoremap pd :LspPreviousDiagnostic<cr>
+" LspRename symbol
+nnoremap rn :LspRename<cr>
+
+
+

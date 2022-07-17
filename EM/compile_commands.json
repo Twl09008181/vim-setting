@@ -1,0 +1,57 @@
+[
+ {
+  "directory": ".",
+  "arguments": [
+   "g++",
+   "-Irelative",
+   "-DSOMEDEF=With spaces, quotes and \\-es.",
+   "-c",
+   "-o",
+   "EM.o",
+   "EM.cpp"
+  ],
+  "file": "EM.cpp"
+ },
+ {
+  "directory": "/DATA/twlics/HW04",
+  "arguments": [
+   "g++",
+   "-std=c++11",
+   "-fopenmp",
+   "-O3",
+   "main.cpp",
+   "-c",
+   "-o",
+   "main.o"
+  ],
+  "file": "main.cpp"
+ },
+ {
+  "directory": "/DATA/twlics/HW04",
+  "arguments": [
+   "g++",
+   "-std=c++11",
+   "-fopenmp",
+   "-O3",
+   "EM.cpp",
+   "-c",
+   "-o",
+   "EM.o"
+  ],
+  "file": "EM.cpp"
+ },
+ {
+  "directory": "/DATA/twlics/HW04",
+  "arguments": [
+   "g++",
+   "-std=c++11",
+   "-fopenmp",
+   "-O3",
+   "LoadMnist.cpp",
+   "-c",
+   "-o",
+   "LoadMnist.o"
+  ],
+  "file": "LoadMnist.cpp"
+ }
+]

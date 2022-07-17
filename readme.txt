@@ -27,3 +27,10 @@ ln -s /usr/lib64/libatomic_ops.so.1 libatomic.so.1
 ln -s /usr/lib64/libtinfo.so.6 libtinfo.so.5    
 ```
 
+### generate compile_commands.json
+compiledb:https://github.com/nickdiego/compiledb
+```
+$ compiledb make
+```
+example:
+see EM
