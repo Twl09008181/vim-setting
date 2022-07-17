@@ -13,7 +13,6 @@ hi CursorLineNr cterm=bold ctermfg=Green ctermbg=NONE"
 
 "show status line fullpath"
 let g:airline_section_b = '%F'
-let g:airline#extensions#tabline#enabled = 1
 
 " search
 set hlsearch
@@ -80,20 +79,23 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 "LSP keymap
 
 " return from CTRL-O (Older cusor position)
-nnoremap gdf :LspDefinition<cr>
-nnoremap gdc :LspDeclaration<cr>
-nnoremap pdf :LspPeekDefinition<cr>
-nnoremap pdc :LspPeekDeclaration<cr>
-nnoremap prf :LspReferences<cr>
-" <leader> is key '\'
-" documentation format
-nnoremap <leader>df :LspDocumentFormat<cr>
+nnoremap \df :LspDefinition<cr>
+nnoremap \tdf :tab split<cr>:LspDefinition<cr>
+nnoremap \vdf :vsp<cr>:LspDefinition<cr>
+nnoremap \sdf :sp<cr>:LspDefinition<cr>
+nnoremap \dc :LspDeclaration<cr>
+nnoremap \tdc :tab split<cr>:LspDeclaration<cr>
+nnoremap \vdc :vsp<cr>:LspDeclaration<cr>
+nnoremap \sdc :sp<cr>:LspDeclaration<cr>
+nnoremap \r :LspReferences<cr>
+nnoremap \h :LspHover<cr>
+nnoremap \adf :LspDocumentFormat<cr>
 "document diagnostics"
-nnoremap <leader>dd :LspDocumentDiagnostic<cr>
-nnoremap nd :LspNextDiagnostic<cr>
-nnoremap pd :LspPreviousDiagnostic<cr>
+nnoremap \dd :LspDocumentDiagnostic<cr>
+nnoremap \nd :LspNextDiagnostic<cr>
+nnoremap \pd :LspPreviousDiagnostic<cr>
 " LspRename symbol
-nnoremap rn :LspRename<cr>
+nnoremap \rn :LspRename<cr>
 
 
 
