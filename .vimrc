@@ -84,7 +84,7 @@ nnoremap gdf :LspDefinition<cr>
 nnoremap gdc :LspDeclaration<cr>
 nnoremap pdf :LspPeekDefinition<cr>
 nnoremap pdc :LspPeekDeclaration<cr>
-nnoremap lrf :LspReferences<cr>
+nnoremap prf :LspReferences<cr>
 " <leader> is key '\'
 " documentation format
 nnoremap <leader>df :LspDocumentFormat<cr>
