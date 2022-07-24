@@ -18,11 +18,10 @@ let g:airline_section_b = '%F'
 set hlsearch
 set incsearch
 set ignorecase
-set smartcase
 
 " tab
 set expandtab
-set tabstop=4
+set tabstop=2
 set shiftwidth=2
 
 " tabe
@@ -35,8 +34,8 @@ filetype indent on
 filetype plugin on
 
 " keymap
-map jj <ESC>
-inoremap ( ()<left>
+inoremap jh <ESC>
+
 inoremap [ []<left>
 inoremap {{ {}<left>
 "{ and enter (<CR> == enter)"
@@ -53,23 +52,24 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'mattn/vim-lsp-settings'
+
+
 call plug#end()
 
-if executable('clangd')
-      augroup lsp_clangd
-          autocmd!
-          autocmd User lsp_setup call lsp#register_server({
-                \ 'name': 'clangd',
-                \ 'cmd': {server_info->['clangd']},
-                \ 'allowlist': ['.c','.cc', '.cpp', '.objc', '.objcpp'],
-                \ 'root_uri':['~./workspace/compile_command.json']
-                \ })
-          autocmd FileType c setlocal omnifunc=lsp#complete
-          autocmd FileType cpp setlocal omnifunc=lsp#complete
-          autocmd FileType objc setlocal omnifunc=lsp#complete
-          autocmd FileType objcpp setlocal omnifunc=lsp#complete
-          augroup end
-endif
+" if executable('clangd')
+"       augroup lsp_clangd
+"           autocmd!
+"           autocmd User lsp_setup call lsp#register_server({
+"                 \ 'name': 'clangd',
+"                 \ 'cmd': {server_info->['clangd']},
+"                 \ 'allowlist': ['.c','.cc', '.cpp', '.objc', '.objcpp']
+"                 \ })
+"           autocmd FileType c setlocal omnifunc=lsp#complete
+"           autocmd FileType cpp setlocal omnifunc=lsp#complete
+"           autocmd FileType objc setlocal omnifunc=lsp#complete
+"           autocmd FileType objcpp setlocal omnifunc=lsp#complete
+"           augroup end
+" endif
 
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -88,7 +88,7 @@ nnoremap \tdc :tab split<cr>:LspDeclaration<cr>
 nnoremap \vdc :vsp<cr>:LspDeclaration<cr>
 nnoremap \sdc :sp<cr>:LspDeclaration<cr>
 nnoremap \r :LspReferences<cr>
-nnoremap \h :LspHover<cr>
+nnoremap \hov :LspHover<cr>
 nnoremap \adf :LspDocumentFormat<cr>
 "document diagnostics"
 nnoremap \dd :LspDocumentDiagnostic<cr>
@@ -96,6 +96,7 @@ nnoremap \nd :LspNextDiagnostic<cr>
 nnoremap \pd :LspPreviousDiagnostic<cr>
 " LspRename symbol
 nnoremap \rn :LspRename<cr>
+let g:markdown_fenced_languages = ['ts=typescript']
 
 
 
