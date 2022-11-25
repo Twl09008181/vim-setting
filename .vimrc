@@ -8,9 +8,8 @@ set clipboard=unnamed
 set cursorline
 set showcmd
 set bg=dark  
-hi LineNr cterm=bold ctermfg=DarkGrey ctermbg=NONE
-hi CursorLineNr cterm=bold ctermfg=Green ctermbg=NONE"
 
+hi  cursorline cterm=underline term=underline ctermfg=NONE ctermbg=NONE
 "show status line fullpath"
 let g:airline_section_b = '%F'
 
@@ -34,7 +33,6 @@ filetype indent on
 filetype plugin on
 
 " keymap
-inoremap jh <ESC>
 
 inoremap [ []<left>
 inoremap {{ {}<left>
